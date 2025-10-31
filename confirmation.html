@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+<title>Confirmation de commande</title>
+<link rel="stylesheet" href="style.css">
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+td:first-child {
+  text-align: right;
+  color: #333;
+  font-weight: normal; /* pas en gras */
+}
+td:nth-child(2) {
+  text-align: center;
+  font-weight: bold; /* valeurs centrées et en gras */
+  color: #000;
+}
+td:nth-child(3) {
+  text-align: left;
+  font-family: "Amiri", serif;
+  direction: rtl;
+  color: #222;
+}
+</style>
+</head>
+<body>
+
+<div class="form-container">
+  <header>
+    <img src="Logo.png" alt="Logo" class="logo-header">
+  </header>
+
+    <h1 class="confirmation-title">Commande confirmée</h1>
+    <p>
+        <span class="article-text fr" id="articleNomFR"></span>
+        <span class="article-text ar" id="articleNomAR"></span>
+    </p>
+    <div class="confirmation-container">
+      <table id="recap-table" class="summary-box">
+        <tr><td>Quantité</td><td id="recap-qtt"></td><td>الكمية</td></tr>
+        <tr><td>Total à payer</td><td id="recap-total"></td><td>المبلغ الإجمالي</td></tr>
+        <tr><td>Nom</td><td id="recap-nom"></td><td>الاسم</td></tr>
+        <tr><td>Téléphone</td><td id="recap-tel"></td><td>رقم الهاتف</td></tr>
+        <tr><td>Wilaya</td><td id="recap-wilaya"></td><td>الولاية</td></tr>
+        <tr><td>Commune</td><td id="recap-commune"></td><td>البلدية</td></tr>
+        <tr><td>Livraison</td><td id="recap-livraison"></td><td>التوصيل</td></tr>
+        <tr id="row-desk"><td>Point relais</td><td id="recap-desk"></td><td>مكتب الاستلام</td></tr>
+      </table>
+    </div>
+<h3 class="confirmation-title">تم تسجيل طلبك بنجاح. سيتم الاتصال بك قريبًا لإتمام عملية التوصيل<br>Votre commande a été enregistrée avec succès. Vous serez contacté prochainement pour finaliser la livraison</h3>
+<button class="btn-submit" onclick="window.location.href='https://soweg.online'">Retour à la boutique / العودة إلى المتجر</button>
+<br>
+  <footer>
+    <img src="Logo.png" alt="Logo" class="logo-footer">
+  </footer>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const stored = localStorage.getItem("commandeData");
+  if (!stored) {
+    document.querySelector(".form-container").innerHTML = "<p>❌ Aucune commande trouvée.</p>";
+    return;
+  }
+
+  const data = JSON.parse(stored);
+  const cmd = data.formData || data; // ✅ compatibilité si structure future change
+
+  // Vérifie que les données essentielles sont là
+  if (!cmd || Object.keys(cmd).length === 0) {
+    document.querySelector(".form-container").innerHTML = "<p>❌ Aucune commande trouvée.</p>";
+    return;
+  }
+
+  // Remplissage des champs
+  document.getElementById("articleNomFR").textContent = data.nomFR || cmd.articleNomFR || "";
+  document.getElementById("articleNomAR").textContent = data.nomAR || cmd.articleNomAR || "";
+  document.getElementById("recap-qtt").textContent = cmd.qtt || "";
+  document.getElementById("recap-total").textContent = cmd.prixTotal || "";
+  document.getElementById("recap-nom").textContent = cmd.nom_prenom || "";
+  document.getElementById("recap-tel").textContent = cmd.tel || "";
+  document.getElementById("recap-wilaya").textContent = cmd.wilayaNom || "";
+  document.getElementById("recap-commune").textContent = cmd.commune || "";
+  document.getElementById("recap-livraison").textContent =
+    cmd.modeLivraison === "domicile" ? "À domicile" : "Point Desk";
+
+  const deskRow = document.getElementById("row-desk");
+  if (!cmd.nomDesk || cmd.nomDesk.trim() === "-" || cmd.nomDesk.trim() === "") {
+    deskRow.style.display = "none";
+  } else {
+    document.getElementById("recap-desk").textContent = cmd.nomDesk || "";
+  }
+
+  // Nettoyage du localStorage pour éviter réaffichage
+  localStorage.removeItem("commandeData");
+});
+</script>
+
+</body>
+</html>

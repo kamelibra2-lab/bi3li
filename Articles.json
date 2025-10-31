@@ -1,0 +1,68 @@
+{
+  "AB19": {
+    "prix": 1700,
+    "ancien_prix": "",
+    "remise_x2": 100,
+    "remise_x3": 300,
+    "remise_x4": 500,
+    "nom_fr": "Socquettes Mixtes Bambou",
+    "nom_ar": "جوارب قصيرة مختلطة من ألياف الخيزران",
+    "description_fr": "Pack de 12 paires de chaussettes en fibre de bambou, de type Socquette (Low cut) au niveau de la cheville",
+    "description_ar": "من 12 زوجًا من الجوارب المصنوعة من ألياف البامبو، من نوع الجوارب القصيرة (ذات القص المفضود) عند مستوى الكاحل"
+  },
+  "AC01": {
+    "prix": 2500,
+    "ancien_prix": "",
+    "remise_x2": 100,
+    "remise_x3": 300,
+    "remise_x4": 500,
+    "nom_fr": "Chaussettes en Cotton Classiques",
+    "nom_ar": "جوارب قطنية كلاسيكية",
+    "description_fr": "Pack de 12 paires de chaussettes en Cotton, de type Ankle crew (mini-crew) au-dessous du mi-mollet",
+    "description_ar": "حزمة من 12 زوجًا من الجوارب القطنية، من نوع أنكل كرو (مي - كرو) تحت منتصف الساق"
+  },
+  "AC13N": {
+    "prix": 1500,
+    "ancien_prix": 1800,
+    "remise_x2": 100,
+    "remise_x3": 300,
+    "remise_x4": 500,
+    "nom_fr": "Socquettes Adultes Coton Noir",
+    "nom_ar": "جوارب قصيرة للبالغين من القطن باللون الأسود",
+    "description_fr": "Pack de 12 paires de chaussettes en Cotton, de type Socquette (Low cut) au niveau de la cheville",
+    "description_ar": "من 12 زوجًا من الجوارب القطنية، نوع سُكّتة (قصيرة) عند مستوى الكاحل"
+  },
+  "AC16B": {
+    "prix": 1700,
+    "ancien_prix": "",
+    "remise_x2": 100,
+    "remise_x3": 300,
+    "remise_x4": 500,
+    "nom_fr": "Socquettes Invisibles Femmes / Mixte Ados",
+    "nom_ar": "جوارب خفية للنساء / مختلطة للمراهقين",
+    "description_fr": "Pack de 12 paires de chaussettes en Cotton, de type Invisible (No-show) au-dessous de la cheville",
+    "description_ar": "من 12 زوجًا من الجوارب القطنية، من النوع الخفي (غير ضاهر) أسفل الكاحل"
+  },
+  "AB20": {
+    "prix": 1700,
+    "ancien_prix": 1800,
+    "remise_x2": 100,
+    "remise_x3": 300,
+    "remise_x4": 500,
+    "nom_fr": "Socquettes Femmes / Mixte Ados",
+    "nom_ar": "جوارب للنساء / مختلطة للمراهقين",
+    "description_fr": "Pack de 12 paires de chaussettes en fibre de bambou, de type Socquette (Low cut) au niveau de la cheville",
+    "description_ar": "حزمة من 12 زوجًا من الجوارب المصنوعة من ألياف البامبو، من نوع جوارب قصيرة (قصيرة عند الكاحل)"
+  },
+  "AB07": {
+    "prix": 2200,
+    "ancien_prix": 2400,
+    "remise_x2": 100,
+    "remise_x3": 300,
+    "remise_x4": 500,
+    "nom_fr": "Chaussettes Mixtes Bambou",
+    "nom_ar": "جوارب مختلطة من ألياف الخيزران",
+    "description_fr": "Pack de 12 paires de chaussettes en fibre de bambou, de type Quarter (chaussettes quart) 7 cm au-dessus de la cheville",
+    "description_ar": "حزمة من 12 زوجًا من الجوارب المصنوعة من ألياف البامبو، من نوع كوارتر (جوارب ربع) بارتفاع 7 سم فوق الكاحل"
+  }
+}
